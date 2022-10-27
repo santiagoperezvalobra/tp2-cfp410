@@ -7,7 +7,7 @@ ALTO=500
 
 # Definimos app
 app = tk.Tk()
-app.title("Ejemplo clase")
+app.title("Saludos")
 app.config(width=ANCHO, height=ALTO)
 
 # Definimos el texto
@@ -32,7 +32,7 @@ text_saludo.place(x=20,y=110)
 # Función para saludar. Crea un nuevo label
 def saludo():
     if len(text_input.get()):
-        str_saludo.set(f"Hola {text_input.get()}")
+        str_saludo.set(f"Hola {text_input.get()}.")
     else:
         str_saludo.set(f"Hola usuario.")
 
