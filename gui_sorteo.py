@@ -2,6 +2,7 @@ import random
 from random import choice
 import tkinter as tk
 from tkinter import ttk
+from tkinter import *
 
 try:
     ANCHO=500
@@ -21,13 +22,17 @@ try:
        
     textoo = tk.StringVar()
     text2 = ttk.Label(app,textvariable=textoo)
-    text2.place(x=20,y=120)
+    text2.place(x=20,y=100)
 
     participantes = []
+
+    lista = Listbox(app, width= 50)
+    lista.place(x=160, y=140)
 
     def inscripciones(*args):
         participante = text_inputVar.get()
         participantes.append(participante)
+        lista.insert(tk.END, participante)
         text_inputVar.set('')    
 
     btn_gen = ttk.Button(text="Anotar", command=inscripciones)
@@ -45,10 +50,11 @@ try:
 
     def nuevo_sorteo():
         participantes.clear()
+        lista.delete(0,END)
+        textoo.set("")
     btn_gen = ttk.Button(text="Nuevo sorteo", command=nuevo_sorteo)
     btn_gen.place(x=200,y=60)
     
-
     app.mainloop()
 
 except ImportError as e:
