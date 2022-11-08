@@ -58,6 +58,6 @@ try:
     app.mainloop()
 
 except ImportError as e:
-    print(f"Error al importar el módulo piedra papel o tijeras.\nERROR: {e}")
+    print(f"Error al importar el módulo.\nERROR: {e}")
 except Exception as e:
     print(f"Ha ocurrido un error inesperado.\nERROR: {e}")
